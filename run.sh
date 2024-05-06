@@ -2,7 +2,8 @@
 
 set -e
 
-MNT_DIRECTORY=${HOME}/work/
+MNT_DIRECTORY=${HOME}/dev/
+CFG_DIR=${HOME}/.config/imhex/
 
 build=0
 while getopts "b" flag
@@ -30,4 +31,5 @@ docker run \
     --workdir /Downloads \
     --network host \
     -v ${MNT_DIRECTORY}:/mnt/ \
+    -v ${CFG_DIR}:/root/.config/imhex/ \
     imhex-viewer 
